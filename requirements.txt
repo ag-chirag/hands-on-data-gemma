@@ -1,0 +1,5 @@
+git+https://github.com/datacommonsorg/llm-tools
+transformers
+bitsandbytes 
+accelerate
+python-dotenv
