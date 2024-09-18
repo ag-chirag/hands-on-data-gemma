@@ -1,5 +1,5 @@
 git+https://github.com/datacommonsorg/llm-tools
-transformers
-bitsandbytes 
-accelerate
-python-dotenv
+llama-cpp-python
+huggingface-hub
+rich
+langchain-anthropic >= 0.1.19
