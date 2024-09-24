@@ -1,28 +1,24 @@
-# Retrieval-Interleaved Generation (RIG) Demo
+# Hands on with Data Gemma
 
-This project demonstrates the Retrieval-Interleaved Generation (RIG) technique using either the DataGemma or Claude language model. It combines the power of large language models with real-time data retrieval from Data Commons to provide accurate and up-to-date responses to statistical queries.
+This project dives into the capabilities of Google's DataGemma LLM and demonstrates how to replicate similar behavior on the Claude LLM through prompt engineering. By combining large language models with real-time data retrieval from [Data Commons](https://datacommons.org/), we aim to provide accurate and up-to-date responses to statistical queries.
 
-## Features
+## What This Project Does
 
-- Utilizes either DataGemma (downloaded from HuggingFace for local inference) or Claude 3.5 Sonnet (via Anthropic's API) for generating statistical sub-queries
-- By default, uses a 2-bit quantized version of DataGemma 27b for local inference
-- Integrates with Data Commons API for retrieving statistical data
-- Implements RIG technique to enhance response accuracy with factual information
-- Requires only one LLM (either DataGemma or Claude) at a time for generating statistical sub-queries
+- **DataGemma Integration:** Sets up a Retrieval Augmented Generation (RAG) pipeline using the DataGemma LLM and the Data Commons knowledge graph.
+- **Claude LLM Experimentation:** Mimics DataGemma's behavior on the Claude LLM by crafting specific prompts, exploring how far prompt engineering can go without fine-tuning.
+- **Real-Time Data Retrieval:** Utilizes the Data Commons Natural Language API to fetch statistical data based on generated queries.
+- **Explores Hallucination Reduction:** Investigates methods to reduce hallucinations in LLMs by grounding their responses in verified external data.
 
-## Installation
+## Why This Matters
+As developers and hackers, we're always on the lookout for ways to make AI models more reliable and effective. This project is a hands-on exploration of integrating LLMs with external data sources to enhance factual accuracy. It's about tinkering, experimenting, and seeing what's possible when we push the boundaries a bit.
 
-### Prerequisites
+## Getting Started
 
-- Python 3.12 or higher
-- Git
 
-### Steps
-
-1. Clone the repository:
+1. **Clone the repository:**
    ```
-   git clone https://github.com/ag-chirag/retrieval-interleaved-generation.git
-   cd retrieval-interleaved-generation
+   git clone https://github.com/ag-chirag/hands-on-data-gemma.git
+   cd hands-on-data-gemma
    ```
 
 2. Set up a virtual environment:
@@ -40,7 +36,8 @@ This project demonstrates the Retrieval-Interleaved Generation (RIG) technique u
      ```
      pip install -r requirements.txt
      ```
-
+4. **Set Up Data Commons API Key:**
+   - Obtain an API key from [Data Commons](https://docs.datacommons.org/api/index.html#get-key).
 4. Set up environment variables:
    Create a `.env` file in the project root and add your API keys. 
    ```
@@ -122,16 +119,17 @@ llama_print_timings:       total time =   12196.58 ms /    53 tokens
 ╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
-## Project Structure
+## What's Inside
+- **Code Samples:** Examples of how to set up and run the RAG pipeline with DataGemma.
+- **Prompt Engineering with Claude:** Insights into how specific prompts can coax similar behaviors from Claude without additional training.
+- **Data Retrieval Mechanics:** An exploration of how the Data Commons NL API can be leveraged for real-time data fetching.
 
-- `model.py`: Contains the `DataGemma` and `Claude` classes for interacting with the language models
-- `prompts.py`: Defines the prompts used for generating statistical questions
-- `data_commons.py`: Handles interactions with the Data Commons API
-- `requirements.txt`: Lists all the Python dependencies required for the project
+## Notes
+- We're using a 2-bit quantized version of the DataGemma 27B model to make it accessible without needing heavyweight hardware.
+- The project is more about exploration than production-ready code—perfect for those who love to dig in and see how things work under the hood.
 
 ## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+Found something interesting? Have ideas to push this further? Feel free to open an issue or submit a pull request. Collaboration is the heart of innovation.
 
 
 ## Acknowledgements
